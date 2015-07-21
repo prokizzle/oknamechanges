@@ -65,3 +65,12 @@
   opacity: 1;
   transition: opacity .5s ease-in;
 }
+
+.example-appear {
+  opacity: 0.01;
+  transition: opacity .5s ease-in;
+}
+
+.example-appear.example-appear-active {
+  opacity: 1;
+}

@@ -20,7 +20,6 @@ var NameChangeFeed = React.createClass({
         self.setState({
           nameChanges: changes
         });
-        console.log(self.state.nameChanges);
         self.pollForNameChanges();
       });
     }, 5000);
@@ -52,15 +51,6 @@ var NameChangeFeed = React.createClass({
     var self = this;
     if (this.state.nameChanges.length) {
       var feedItems = this.state.nameChanges.map(function(item, i){
-      if (self.state.errors[item.id]) {
-        var likeButton = (<span className='error'>{self.state.errors[item.id]}</span>);
-      } else {
-        var likeButton = (
-           <span>
-             <i id={item.id} className={self.likeButtonClass(item.id)} onClick={self.like}></i>{+item.likes + (self.state.likes[item.id] ? 1 : 0)}
-           </span>
-        );
-      }
         var newNames = item.new_names.map(function(name){
           return (
             <span>
@@ -80,7 +70,11 @@ var NameChangeFeed = React.createClass({
                 <span className='oldName'>{item.old_name}</span>{newNames}
               </div>
               <div className="columns large-2 medium-2 small-2">
-                {likeButton}
+                <LikeButton id={item.id}
+                      handleClick={self.like}
+                      totalLikes={+item.likes + (self.state.likes[item.id] ? 1 : 0)}
+                      liked={self.state.likes[item.id]}
+                      errors={self.state.errors[item.id]} />
               </div>
             </div>
         );
@@ -91,7 +85,7 @@ var NameChangeFeed = React.createClass({
 
     return (
       <div className='row'>
-        <ReactCSSTransitionGroup transitionName="example">
+        <ReactCSSTransitionGroup transitionName="example" component="ul">
             {feedItems}
         </ReactCSSTransitionGroup>
       </div>

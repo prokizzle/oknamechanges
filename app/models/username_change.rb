@@ -8,6 +8,11 @@ class UsernameChange < ActiveRecord::Base
   def self.random
     offset = rand(count)
     change = offset(offset).first
+    change_for(change.old_name)
+  end
+
+  def self.change_for(old_name)
+    change = find_by(old_name: old_name)
     newNames = [change.new_name]
     oldName = change.old_name
     nextChange = ""
