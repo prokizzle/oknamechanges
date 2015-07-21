@@ -19,9 +19,11 @@ var LikeButton = React.createClass({
       );
     }
     return (
+      <div className="columns large-2 medium-2 small-2">
         <span>
           {button}
         </span>
+      </div>
     );
   }
 })

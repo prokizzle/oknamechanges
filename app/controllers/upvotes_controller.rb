@@ -9,4 +9,10 @@ class UpvotesController < ApplicationController
 
     render json: {likes: change.get_likes.size, loggedIn: !current_user.nil?}.as_json
   end
+
+  def your_upvotes
+    @changes = current_user.find_voted_items.map do |change|
+      UsernameChange.change_for(change.old_name)
+    end
+  end
 end

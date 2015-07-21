@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'home#index'
   get '/api/random-name-change' => 'name_changes#get_next'
   get '/popular' => 'name_changes#popular'
+  get '/favorites' => 'upvotes#your_upvotes'
 
   post '/api/upvote' => 'upvotes#upvote'
 end

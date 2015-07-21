@@ -13,4 +13,6 @@ class NameChangesController < ApplicationController
       UsernameChange.change_for(change.old_name)
     end
   end
+
+
 end
