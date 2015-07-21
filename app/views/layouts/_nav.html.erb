@@ -11,22 +11,20 @@
     <section class="top-bar-section">
       <!-- Right Nav Section -->
       <ul class="right">
-
-        <li>
         <% if signed_in? %>
-          <%= link_to 'Sign Out', '/users/sign_out', method: 'delete', class: "btn btn-flat btn-primary" %>
+          <li><%= link_to 'Sign Out', '/users/sign_out', method: 'delete', class: "btn btn-flat btn-primary" %>
         <% else %>
-          <%= link_to 'Sign In', "/users/sign_in", class: "btn btn-flat btn-primary" %>
+          <li><%= link_to 'Sign In', "/users/sign_in" %></li>
+          <li class='active'><%= link_to 'Sign Up', "/users/sign_up" %></li>
         <% end %>
-        </li>
       </ul>
 
       <!-- Left Nav Section -->
       <ul class="left">
-        <% if signed_in? %>
+        <% if signed_in? && 1 == 2 %>
           <li><a href="/favorites">Your Favorites</a></li>
-        <% end %>
           <li><a href="/popular">Popular</a></li>
+        <% end %>
       </ul>
     </section>
   </nav>

@@ -14,8 +14,23 @@
 
   <body>
     <%= render 'layouts/nav' %>
-      <div class="alert alert-dismissable alert-info"><%= notice %></div>
-      <div class="alert alert-dismissable alert-warning"><%= alert %></div>
+    <% if !notice.nil? %>
+      <div class="row">
+        <div data-alert class="alert-box info radius">
+          <%= notice %>
+          <a href="#" class="close">&times;</a>
+        </div>
+      </div>
+    <% end %>
+
+    <% if !alert.nil?%>
+      <div class="row">
+        <div data-alert class="alert-box alert radius">
+          <%= alert %>
+          <a href="#" class="close">&times;</a>
+        </div>
+      </div>
+    <% end %>
 
   <div class="row">
     <div class="columns large-12 medium-12 small-12">
