@@ -10,6 +10,7 @@ gem 'node'
 gem 'puma'
 gem 'devise'
 gem 'acts_as_votable', '~> 0.10.0'
+gem 'ejs'
 # Use SCSS for stylesheets
 gem 'foundation-rails'
 gem "font-awesome-rails"

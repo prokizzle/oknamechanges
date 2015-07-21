@@ -35,8 +35,7 @@ var NameChangeFeed = React.createClass({
     }).done(function(){
       self.setState({likes: likes});
     }).fail( function(xhr, textStatus, errorThrown) {
-      errors[id] = 'You must be logged in to vote!';
-      self.setState({errors: errors});
+      Alert.error("You must be logged in to vote!");
     });
   },
   likeButtonClass: function(id){

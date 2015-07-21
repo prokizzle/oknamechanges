@@ -10,7 +10,7 @@ var LikeButton = React.createClass({
     var self = this;
     var button;
     if (self.props.errors) {
-      button = (<span className='error'>{self.state.errors[item.id]}</span>);
+      button = (<span className='error'>You must be logged in to vote</span>);
     } else {
       button = (
         <span>
