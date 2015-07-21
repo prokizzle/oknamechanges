@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "OkNameChanges" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <%= render 'layouts/nav' %>
+      <div class="alert alert-dismissable alert-info"><%= notice %></div>
+      <div class="alert alert-dismissable alert-warning"><%= alert %></div>
+
+  <div class="row">
+    <div class="columns large-12 medium-12 small-12">
+      <%= yield %>
+    </div>
+  </div>
+
+  </body>
+</html>

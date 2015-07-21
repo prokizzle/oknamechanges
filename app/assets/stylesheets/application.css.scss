@@ -1,0 +1,65 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ //= require foundation_and_overrides
+
+ */
+
+@import "font-awesome";
+.first {
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    font-size: 200%;
+}
+
+.latter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.oldName,
+.newName {
+    font-weight: bold;
+}
+
+.became {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.loading {
+    height: 300px;
+}
+
+.error {
+    font-weight: bold;
+    font-size: 10%;
+}
+
+.like {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.example-enter {
+  opacity: 0.01;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
