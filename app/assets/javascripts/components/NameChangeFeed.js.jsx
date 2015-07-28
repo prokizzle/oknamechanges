@@ -26,7 +26,6 @@ var NameChangeFeed = React.createClass({
     var self = this;
     setTimeout(function(){
         self.getNameChange();
-      });
     }, 5000);
   },
   like: function(e){
