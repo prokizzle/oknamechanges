@@ -63,9 +63,9 @@ var NameChangeFeed = React.createClass({
           );
         });
         if (i == 0) {
-          classes = 'panel first';
+          classes = 'changeBox first';
         } else {
-          classes = 'panel latter';
+          classes = 'changeBox latter';
         }
         return (
             <div>
