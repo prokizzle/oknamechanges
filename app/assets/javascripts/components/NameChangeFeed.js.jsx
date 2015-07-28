@@ -9,18 +9,23 @@ var NameChangeFeed = React.createClass({
     };
   },
   componentDidMount: function(){
-    this.pollForNameChanges();
+    this.getNameChange();
+  },
+  getNameChange: function(){
+    var self = this;
+    var changes = self.state.nameChanges;
+    $.get('/api/random-name-change', function(data){
+      changes.unshift(data);
+      self.setState({
+        nameChanges: changes
+      });
+      self.pollForNameChanges();
+    });
   },
   pollForNameChanges: function(){
     var self = this;
     setTimeout(function(){
-        var changes = self.state.nameChanges;
-      $.get('/api/random-name-change', function(data){
-        changes.unshift(data);
-        self.setState({
-          nameChanges: changes
-        });
-        self.pollForNameChanges();
+        self.getNameChange();
       });
     }, 5000);
   },
