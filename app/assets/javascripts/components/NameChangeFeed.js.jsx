@@ -59,22 +59,16 @@ var NameChangeFeed = React.createClass({
           );
         });
         if (i == 0) {
-          classes = 'panel first columns large-10 medium-10 small-10';
+          classes = 'panel first';
         } else {
-          classes = 'panel latter columns large-10 medium-10 small-10';
+          classes = 'panel latter';
         }
         return (
             <div>
               <div className={classes} id={item.id}>
                 <span className='oldName'>{item.old_name}</span>{newNames}
               </div>
-              <div className="columns large-2 medium-2 small-2">
-                <LikeButton id={item.id}
-                      handleClick={self.like}
-                      totalLikes={+item.likes + (self.state.likes[item.id] ? 1 : 0)}
-                      liked={self.state.likes[item.id]}
-                      errors={self.state.errors[item.id]} />
-              </div>
+
             </div>
         );
       });
