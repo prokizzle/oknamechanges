@@ -3,7 +3,7 @@ var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 var NameChangeFeed = React.createClass({
   getInitialState: function(){
     return {
-      nameChanges: new FixedQueue(10, []),
+      nameChanges: new FixedQueue(10, [this.props.firstChange]),
       likes: {},
       errors: {}
     };
