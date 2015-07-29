@@ -4,29 +4,9 @@
       <li class="name">
         <h1><a href="/">OkNameChanges</a></h1>
       </li>
-       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
     </ul>
 
-    <section class="top-bar-section">
-      <!-- Right Nav Section -->
-      <ul class="right">
-        <% if signed_in? %>
-          <li><%= link_to 'Sign Out', '/users/sign_out', method: 'delete', class: "btn btn-flat btn-primary" %>
-        <% else %>
-          <li><%= link_to 'Sign In', "/users/sign_in" %></li>
-          <li class='active'><%= link_to 'Sign Up', "/users/sign_up" %></li>
-        <% end %>
-      </ul>
 
-      <!-- Left Nav Section -->
-      <ul class="left">
-        <% if signed_in? && 1 == 2 %>
-          <li><a href="/favorites">Your Favorites</a></li>
-          <li><a href="/popular">Popular</a></li>
-        <% end %>
-      </ul>
-    </section>
   </nav>
 </div>
 <br><br>
