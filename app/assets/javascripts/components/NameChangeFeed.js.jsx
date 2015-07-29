@@ -63,12 +63,12 @@ var NameChangeFeed = React.createClass({
         } else {
           classes = 'changeBox latter';
         }
+        var fullString = '<strong>' + item.old_name + '</strong>' + newNames;
         return (
             <div className='row'>
               <div className={classes} id={item.id}>
-                <strong>{item.old_name}</strong><div dangerouslySetInnerHTML={{__html: newNames}}></div>
+                <div dangerouslySetInnerHTML={{__html: fullString}}></div>
               </div>
-
             </div>
         );
       });
