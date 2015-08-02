@@ -23,5 +23,21 @@ module Oknamechanges
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
     config.react.addons = true # defaults to false
+
+    # Needs to be false on Heroku
+    config.serve_static_assets = false
+    config.static_cache_control = "public, max-age=31536000"
+
+    # Enable the asset pipeline
+    config.assets.enabled = true
+    config.assets.version = '1.0'
+
+    # Add the fonts path
+    config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+    config.assets.paths << Rails.root.join('vendor', 'assets', 'fonts')
+
+    # Precompile additional assets
+    config.assets.precompile += %w( *.svg *.eot *.woff *.ttf )
+    config.assets.precompile += %w( *.png *.jpg *.jpeg *.gif )
   end
 end
