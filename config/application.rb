@@ -19,7 +19,6 @@ module Oknamechanges
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-    APP_VERSION = `git describe --always` unless defined? APP_VERSION
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
     config.react.addons = true # defaults to false
@@ -29,6 +28,7 @@ module Oknamechanges
     config.static_cache_control = "public, max-age=31536000"
 
     # Enable the asset pipeline
+    APP_VERSION = `git describe --always` unless defined? APP_VERSION
     config.assets.enabled = true
     config.assets.version = APP_VERSION
 
