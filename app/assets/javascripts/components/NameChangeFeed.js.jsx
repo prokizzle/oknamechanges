@@ -1,5 +1,3 @@
-var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
-
 var NameChangeFeed = React.createClass({
   getInitialState: function(){
     return {
@@ -78,9 +76,7 @@ var NameChangeFeed = React.createClass({
 
     return (
       <div className='row'>
-        <ReactCSSTransitionGroup transitionName="example" component="ul">
-            {feedItems}
-        </ReactCSSTransitionGroup>
+        {feedItems}
       </div>
     );
   }
