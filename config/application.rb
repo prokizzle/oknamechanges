@@ -26,18 +26,5 @@ module Oknamechanges
     # Needs to be false on Heroku
     config.serve_static_files = false
     config.static_cache_control = "public, max-age=31536000"
-
-    # Enable the asset pipeline
-    APP_VERSION = `git describe --always` unless defined? APP_VERSION
-    config.assets.enabled = true
-    config.assets.version = APP_VERSION
-
-    # Add the fonts path
-    config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
-    config.assets.paths << Rails.root.join('vendor', 'assets', 'fonts')
-
-    # Precompile additional assets
-    config.assets.precompile += %w( *.svg *.eot *.woff *.ttf )
-    config.assets.precompile += %w( *.png *.jpg *.jpeg *.gif )
   end
 end
