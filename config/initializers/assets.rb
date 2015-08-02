@@ -16,6 +16,12 @@ Rails.application.configure do
   config.assets.precompile += %w( *.svg *.eot *.woff *.ttf )
   config.assets.precompile += %w( *.png *.jpg *.jpeg *.gif )
 
+  config.react.addons = true # defaults to false
+
+  # Needs to be false on Heroku
+  config.serve_static_files = true
+  config.static_cache_control = "public, max-age=31536000"
+
   # Add additional assets to the asset load path
   # Rails.application.config.assets.paths << Emoji.images_path
 

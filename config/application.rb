@@ -21,10 +21,6 @@ module Oknamechanges
     # config.i18n.default_locale = :de
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
-    config.react.addons = true # defaults to false
 
-    # Needs to be false on Heroku
-    config.serve_static_files = false
-    config.static_cache_control = "public, max-age=31536000"
   end
 end
