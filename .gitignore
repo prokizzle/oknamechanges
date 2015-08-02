@@ -15,17 +15,3 @@
 /log/*
 !/log/.keep
 /tmp
-
-# Ignore application configuration
-# /config/application.yml
-public/assets/FontAwesome-bdc5d0b9f397be83e886c74b0141d1954aa4384b359dce49829994c4a2e1f7bf.otf
-public/assets/application-28e3fdb39d6be918b1dd08983d41ddf9d799f6f895bd07abbf6aef6b87ab1af1.css
-public/assets/application-f8171ae651d7718c13cf8fe5acdd816f90583d80d11f7c2349f74f1695a52513.js
-public/assets/bootstrap-material-design
-public/assets/fontawesome-webfont-9e540a087924a6e64790149d735cac022640e4fa6bff6bd65f5e9f41529bf0b3.ttf
-public/assets/fontawesome-webfont-aadc3580d2b64ff5a7e6f1425587db4e8b033efcbf8f5c332ca52a5ed580c87c.woff2
-public/assets/fontawesome-webfont-bfdef833219a6edffd9c3cbc28db72739d22bb4d20cc2e2f8d56a7a4d408a206.svg
-public/assets/fontawesome-webfont-cbb644d0ee730ea57dd5fbae35ef5ba4a41d57a254a6b1215de5c9ff8a321c2d.eot
-public/assets/fontawesome-webfont-e3870de89716b72cb61a4bba0e17c75783b361cdaba35ea96961c3070bd8ca18.woff
-public/assets/react-812ff424a05c2bce20d3050776b71cd96194468e18ec6c8f6133ec42ccc3b111.svg
-public/assets/vendor
