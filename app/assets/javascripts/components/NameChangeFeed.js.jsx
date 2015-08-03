@@ -53,19 +53,19 @@ var NameChangeFeed = React.createClass({
     if (this.state.nameChanges.length) {
       var feedItems = this.state.nameChanges.map(function(item, i){
         var newNames = '';
-        for (var i = 0; i < item.new_names.length; i++) {
-          newNames += '&nbsp;became&nbsp;<strong>' + item.new_names[i] + '</strong>'
+        for (var j = 0; j < item.new_names.length; j++) {
+          newNames += ' became ' + item.new_names[j]
         }
         if (i == 0) {
           classes = 'changeBox first';
         } else {
           classes = 'changeBox latter';
         }
-        var fullString = '<strong>' + item.old_name + '</strong>' + newNames;
+        var fullString = item.old_name + newNames;
         return (
-            <div className='row'>
-              <div className={classes} id={item.id}>
-                <div dangerouslySetInnerHTML={{__html: fullString}}></div>
+            <div className='row' key={i}>
+              <div className='columns small-12 medium-12 large-12'>
+                <p className={classes} id='react-div'>{fullString}</p>
               </div>
             </div>
         );
