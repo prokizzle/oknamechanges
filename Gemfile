@@ -32,6 +32,14 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'redis-rack-cache'
+gem 'redis-rails'
+gem 'rack-cache'
+gem "non-stupid-digest-assets"
+gem "lograge"
+gem 'asset_sync'
+gem 'health_check'
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap-material-design'
 end
