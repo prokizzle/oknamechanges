@@ -61,7 +61,7 @@ Rails.application.configure do
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = 'dweyvo5g5u1ws.cloudfront.net'
-  config.action_controller.asset_host = "cdn.lazycupid.me"
+  config.action_controller.asset_host = "https://s3.amazonaws.com/#{ENV['FOG_DIRECTORY']}"
 
   config.cache_store = :redis_store, 'redis://localhost:6379/0/cache', { expires_in: 90.minutes }
   config.static_cache_control = "public, max-age=#{1.year.to_i}"
