@@ -12,12 +12,10 @@ class UsernameChange < ActiveRecord::Base
   end
 
   def self.change_for(old_name)
+
     change = find_by(old_name: old_name)
-    newNames = [change.new_name]
-    oldName = change.old_name
-    nextChange = ""
-    change_id = change.id
-    likes = change.votes_for.size
+    newNames, oldName = [change.new_name], change.old_name
+    nextChange, change_id, likes = "", change.id, change.votes_for.size
     until nextChange.nil?
       nextChange = and_then(change.new_name)
       unless nextChange.nil?
