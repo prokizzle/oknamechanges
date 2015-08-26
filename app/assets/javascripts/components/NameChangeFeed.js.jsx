@@ -26,27 +26,6 @@ var NameChangeFeed = React.createClass({
         self.getNameChange();
     }, 5000);
   },
-  like: function(e){
-    var id = e.currentTarget.id;
-    var likes = this.state.likes;
-    var errors = this.state.errors;
-    var self = this;
-    likes[id] = true;
-    $.post('/api/upvote', {
-      id: id
-    }).done(function(){
-      self.setState({likes: likes});
-    }).fail( function(xhr, textStatus, errorThrown) {
-      Alert.error("You must be logged in to vote!");
-    });
-  },
-  likeButtonClass: function(id){
-    if (this.state.likes[id]) {
-      return 'fa fa-heart fa-3x';
-    } else {
-      return 'fa fa-heart-o fa-3x';
-    }
-  },
   render: function(){
     var classes;
     var self = this;
@@ -62,10 +41,19 @@ var NameChangeFeed = React.createClass({
           classes = 'changeBox latter';
         }
         var fullString = item.old_name + newNames;
+        if (item.match) {
+          var gender = item['match']['gender'].;
+          var location = item['match']['state'];
+          var age = item['match']['age'];
+        }
         return (
             <div className='row' key={i}>
               <div className='columns small-12 medium-12 large-12'>
-                <p className={classes} id='react-div'>{fullString}</p>
+                <p className={classes} id='react-div'>{fullString}
+                  {if (item.match) {
+                      return (<span>{age}/{gender}/{location}</span>)
+                  }}
+                </p>
               </div>
             </div>
         );
