@@ -16,16 +16,17 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'react-rails'
 gem 'asset_sync'
-gem "non-stupid-digest-assets"
+gem 'non-stupid-digest-assets'
 
 # optimization
 gem 'redis-rack-cache'
 gem 'redis-rails'
 gem 'rack-cache'
-gem "lograge"
+gem 'lograge'
 
 # developer experience
 group :development, :test do
+  gem 'rubocop'
   gem 'overcommit'
   gem 'byebug'
   gem 'quiet_assets'
