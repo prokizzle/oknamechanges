@@ -1,6 +1,6 @@
 PreCommit:
   ALL:
-    problem_on_unmodified_line: warn
+    # problem_on_unmodified_line: warn
     requires_files: true
     required: true
     quiet: false
@@ -11,7 +11,7 @@ PreCommit:
     on_warn: fail
   RuboCop:
    enabled: true
-   on_warn: fail # Treat all warnings as failures
+   on_warn: fail
   Brakeman:
     enabled: true
     on_warn: fail
@@ -39,6 +39,8 @@ PreCommit:
   Standard:
     enabled: true
     on_warn: fail
+  YamlSyntax:
+    enabled: true
 
 PostCommit:
   IndexTags:
