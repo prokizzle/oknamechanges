@@ -24,7 +24,8 @@ class UsernameChange < ActiveRecord::Base
         break if nextChange.new_name == oldName
       end
     end
-    return {id: change_id, old_name: oldName, new_names: newNames, likes: likes}
+    match = Match.where(name: change.new_name).first
+    return {id: change_id, old_name: oldName, new_names: newNames, likes: likes, match: match}
   end
 
   def self.test
