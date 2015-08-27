@@ -35,6 +35,9 @@ gem 'ledermann-rails-settings'
 gem 'chronic'
 gem 'time-lord'
 gem 'nikkou'
+gem 'highline'
+gem 'uuidtools'
+gem 'sinatra'
 
 # developer experience
 group :development, :test do
