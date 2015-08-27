@@ -270,6 +270,10 @@ GEM
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.2)
+    nikkou (0.0.4)
+      activesupport
+      nokogiri
+      tzinfo
     node (0.0.2)
       eventmachine
     nokogiri (1.6.6.2)
@@ -458,6 +462,7 @@ DEPENDENCIES
   ledermann-rails-settings
   lograge
   mechanize
+  nikkou
   node
   non-stupid-digest-assets
   overcommit
