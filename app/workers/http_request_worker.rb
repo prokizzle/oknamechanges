@@ -26,7 +26,7 @@ class HttpRequestWorker
   end
 
   def agent
-    @cookies ||= CrawlSession.get_cookies
+    @cookies ||= CrawlSession.cookies
     @agent ||= Mechanize.new do |a|
       a.ssl_version = :TLSv1
       a.cookie_jar      = YAML.load(cookies)
