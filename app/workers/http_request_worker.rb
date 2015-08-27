@@ -2,7 +2,8 @@
 class HttpRequestWorker
   include Sidekiq::Worker
 
-  def perform(link, request_id, callback)
+  def perform(link, callback)
+    request_id = UUIDTools::UUID.random_create
     src = page_source(link) rescue nil
     result_object = { url: link, username: intended_handle(link),
                       src: src, inactive: !src.nil? }
