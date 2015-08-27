@@ -9,6 +9,7 @@ class HandleVisitWorker
 
     condition = { name: result[:username] }
     Match.where(condition).update_all(inactive: true) if result[:inactive]
+    Match.where(condition).update_all(last_visited: Time.current.to_i)
   end
 
   def handle_name_changes(profile)
