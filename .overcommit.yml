@@ -20,6 +20,9 @@ PreCommit:
   JsHint:
     enabled: true
     on_warn: fail
+  JsxHint:
+    enabled: true
+    on_warn: fail
   MergeConflicts:
     enabled: true
     on_warn: fail
