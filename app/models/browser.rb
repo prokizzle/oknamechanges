@@ -1,9 +1,9 @@
 # Processes HTML requests and manages the current user session for OKCupid
 class Browser
   attr_accessor :agent
-  def self.request(url, id, request_id, callback)
+  def self.request(url, callback)
     $redis.set(request_id, Marshal.dump(ready: false))
-    HttpRequestWorker.perform_async(url, id, request_id, callback)
+    HttpRequestWorker.perform_async(url, callback)
   end
 
   def self.response(request_id)
