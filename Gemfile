@@ -1,3 +1,4 @@
+ruby '2.1.5'
 source 'https://rubygems.org'
 
 # core
@@ -26,6 +27,7 @@ gem 'lograge'
 
 # developer experience
 group :development, :test do
+  gem 'cocaine'
   gem 'rubocop'
   gem 'overcommit'
   gem 'byebug'
@@ -33,7 +35,8 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'better_errors'
-  gem 'guard'
+  gem 'rails_best_practices'
+  gem 'guard-rails', require: false
 end
 
 # heroku
