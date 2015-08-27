@@ -30,6 +30,7 @@ group :development, :test do
   gem 'cocaine'
   gem 'rubocop'
   gem 'overcommit'
+  gem 'brakeman'
   gem 'byebug'
   gem 'quiet_assets'
   gem 'web-console', '~> 2.0'
