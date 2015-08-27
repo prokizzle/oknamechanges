@@ -25,6 +25,16 @@ gem 'redis-rails'
 gem 'rack-cache'
 gem 'lograge'
 
+# crawling
+gem 'sidekiq'
+gem 'sidekiq-runner'
+gem 'sidetiq'
+gem 'sidekiq-failures'
+gem 'mechanize'
+gem 'ledermann-rails-settings'
+gem 'chronic'
+gem 'time-lord'
+
 # developer experience
 group :development, :test do
   gem 'cocaine'
