@@ -2,11 +2,13 @@
 class HttpRequestWorker
   include Sidekiq::Worker
 
+  sidekiq_options retry: false
+
   def perform(link, callback)
     request_id = UUIDTools::UUID.random_create
-    src = page_source(link) rescue nil
+    src = page_source(link)# rescue nil
     result_object = { url: link, username: intended_handle(link),
-                      src: src, inactive: !src.nil? }
+                      src: src, inactive: src.nil? }
     handle_request(request_id, result_object, callback)
   end
 
@@ -29,7 +31,7 @@ class HttpRequestWorker
     @cookies ||= CrawlSession.cookies
     @agent ||= Mechanize.new do |a|
       a.ssl_version = :TLSv1
-      a.cookie_jar      = YAML.load(cookies)
+      a.cookie_jar      = YAML.load(@cookies)
       a.user_agent      = CrawlSession.user_agent
       a.read_timeout    = 30
     end

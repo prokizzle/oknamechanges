@@ -1,6 +1,4 @@
 class UsernameChange < ActiveRecord::Base
-  acts_as_votable
-
   def self.and_then(name)
     find_by(old_name: name)
   end

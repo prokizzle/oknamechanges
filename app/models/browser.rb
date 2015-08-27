@@ -2,7 +2,6 @@
 class Browser
   attr_accessor :agent
   def self.request(url, callback)
-    $redis.set(request_id, Marshal.dump(ready: false))
     HttpRequestWorker.perform_async(url, callback)
   end
 
@@ -11,7 +10,7 @@ class Browser
     $redis.del(request_id)
     response[:html] = Mechanize::Page.new(nil,
                                           { 'content-type' => 'text/html' },
-                                          response[:source], nil,
+                                          response[:src], nil,
                                           Mechanize.new)
     response
   end
@@ -47,6 +46,7 @@ class Browser
     agent.idle_timeout = 5
     agent.read_timeout = 5
     agent.user_agent_alias = ['Mac Safari', 'Mac Firefox'].sample
+    agent
   end
 
   def initialize(args)

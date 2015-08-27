@@ -10,6 +10,7 @@ class HandleVisitWorker
     condition = { name: result[:username] }
     Match.where(condition).update_all(inactive: true) if result[:inactive]
     Match.where(condition).update_all(last_visited: Time.current.to_i)
+    add_users(profile)
   end
 
   def handle_name_changes(profile)
@@ -20,5 +21,11 @@ class HandleVisitWorker
 
   def change_detected?(profile)
     profile[:handle] != profile[:intended_handle] && !profile[:inactive]
+  end
+
+  def add_users(profile)
+    profile[:similar_users].to_a.each do |user|
+      AddMatchWorker.perform_async(user)
+    end
   end
 end
