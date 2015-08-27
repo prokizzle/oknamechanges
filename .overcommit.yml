@@ -1,11 +1,4 @@
 PreCommit:
-  ALL:
-    # problem_on_unmodified_line: warn
-    requires_files: true
-    required: true
-    quiet: false
-    on_warn: fail
-
   BundleCheck:
     enabled: true
     on_warn: fail
