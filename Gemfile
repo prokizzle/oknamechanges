@@ -1,4 +1,4 @@
-ruby '2.1.5'
+ruby '2.2.0'
 source 'https://rubygems.org'
 
 # core
@@ -7,6 +7,7 @@ gem 'puma'
 gem 'pg'
 gem 'figaro'
 gem 'health_check'
+gem 'net-ping'
 
 # assets
 gem 'node'
@@ -16,6 +17,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'react-rails'
+# gem "fog", "~>1.20", require: "fog/aws/storage"
 gem 'asset_sync'
 gem 'non-stupid-digest-assets'
 
@@ -23,10 +25,25 @@ gem 'non-stupid-digest-assets'
 gem 'redis-rack-cache'
 gem 'redis-rails'
 gem 'rack-cache'
-gem 'lograge'
+# gem 'lograge'
+
+# crawling
+gem 'sidekiq'
+gem 'sidekiq-runner'
+gem 'sidetiq'
+gem 'sidekiq-failures'
+gem 'mechanize'
+gem 'ledermann-rails-settings'
+gem 'chronic'
+gem 'time-lord'
+gem 'nikkou'
+gem 'highline'
+gem 'uuidtools'
+gem 'sinatra'
 
 # developer experience
 group :development, :test do
+  gem 'clipboard'
   gem 'cocaine'
   gem 'rubocop'
   gem 'overcommit'

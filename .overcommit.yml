@@ -5,6 +5,8 @@ PreCommit:
   RuboCop:
    enabled: true
    on_warn: fail
+   exclude:
+    - '/db/schema.rb'
   Brakeman:
     enabled: true
     on_warn: fail
@@ -27,7 +29,7 @@ PreCommit:
     enabled: true
     on_warn: fail
   ScssLint:
-    enabled: true
+    enabled: false
     on_warn: fail
   SemiStandard:
     enabled: true
