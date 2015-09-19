@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150827064513) do
+ActiveRecord::Schema.define(version: 20150828230124) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,9 @@ ActiveRecord::Schema.define(version: 20150827064513) do
     t.string  "name"
     t.integer "last_visited", default: 0
     t.boolean "inactive",     default: false
+    t.string  "city",         default: ""
+    t.string  "state",        default: ""
+    t.string  "gender",       default: ""
   end
 
   add_index "matches", ["name"], name: "index_matches_on_name", unique: true, using: :btree

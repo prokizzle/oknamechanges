@@ -9,6 +9,9 @@ class Profile
       handle: ajax_field('basic_info_sn', html),
       intended_handle: result[:username],
       inactive: false,
+      city: city(html),
+      state: state(html),
+      gender: gender(html),
       similar_users: similar_users(html),
       new_handle: ajax_field('basic_info_sn', html) }
   end
@@ -39,18 +42,17 @@ class Profile
     target ? target.text.strip : ''
   end
 
-  def self.city
-    target = ajax_field('ajax_location')
+  def self.city(html)
+    target = ajax_field('ajax_location', html)
     target ? target.split(',')[0].strip : ''
   end
 
-  def self.state
-    target = ajax_field('ajax_location')
+  def self.state(html)
+    target = ajax_field('ajax_location', html)
     target ? target.split(',')[1].strip : ''
   end
 
-  def self.gender
-    target = ajax_field('ajax_gender').strip.split(',').first
-    target == 'Woman' ? 'F' : 'M'
+  def self.gender(html)
+    ajax_field('ajax_gender', html).strip.split(',').first
   end
 end

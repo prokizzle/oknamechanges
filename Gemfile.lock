@@ -71,6 +71,7 @@ GEM
     chronic (0.10.2)
     climate_control (0.0.3)
       activesupport (>= 3.0)
+    clipboard (1.0.6)
     cocaine (0.5.7)
       climate_control (>= 0.0.3, < 1.0)
     code_analyzer (0.4.5)
@@ -241,10 +242,6 @@ GEM
     listen (3.0.3)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
-    lograge (0.3.4)
-      actionpack (>= 3)
-      activesupport (>= 3)
-      railties (>= 3)
     loofah (2.0.2)
       nokogiri (>= 1.5.9)
     lumberjack (1.0.9)
@@ -267,6 +264,7 @@ GEM
     nenv (0.2.0)
     net-http-digest_auth (1.4)
     net-http-persistent (2.9.4)
+    net-ping (1.7.7)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.2)
@@ -460,6 +458,7 @@ DEPENDENCIES
   brakeman
   byebug
   chronic
+  clipboard
   cocaine
   figaro
   foundation-rails
@@ -468,8 +467,8 @@ DEPENDENCIES
   highline
   jquery-rails
   ledermann-rails-settings
-  lograge
   mechanize
+  net-ping
   nikkou
   node
   non-stupid-digest-assets
@@ -497,6 +496,3 @@ DEPENDENCIES
   uglifier (>= 1.3.0)
   uuidtools
   web-console (~> 2.0)
-
-BUNDLED WITH
-   1.10.5

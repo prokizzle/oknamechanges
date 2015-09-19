@@ -1,7 +1,7 @@
 # Processes HTML requests and manages the current user session for OKCupid
 class Browser
   attr_accessor :agent
-  def self.request(url, callback)
+  def self.request(url, callback = nil)
     HttpRequestWorker.perform_async(url, callback)
   end
 
@@ -24,7 +24,7 @@ class Browser
     @agent = prepare_agent(
       Mechanize.new do |a|
         a.ssl_version = :TLSv1
-        a.cookie_jar = load_session(@cookie_jar)
+        a.cookie_jar = YAML.load(@cookie_jar)
       end
     )
     check_session_status
@@ -55,6 +55,10 @@ class Browser
     else
       auth_login(args)
     end
+  end
+
+  def page_source
+    @page.parser.xpath('//html').to_html.to_s
   end
 
   def load_session(cookie_jar)
