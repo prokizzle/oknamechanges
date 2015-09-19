@@ -22,8 +22,8 @@ Rails.application.configure do
   config.cache_store = :redis_store, ENV['cache'], { expires_in: 90.minutes }
   config.static_cache_control = "public, max-age=#{1.year.to_i}"
   config.action_dispatch.rack_cache = {
-    metastore:   'redis://localhost:6379/1/metastore',
-    entitystore: 'redis://localhost:6379/1/entitystore'
+    metastore:   "#{ENV['REDIS_URL']}/1/metastore",
+    entitystore: "#{ENV['REDIS_URL']}/1/entitystore"
   }
 
   config.i18n.fallbacks = true
