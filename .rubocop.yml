@@ -1,0 +1,4 @@
+Style/RescueModifier:
+  Enabled: false
+Style/GlobalVars:
+  Enabled: false

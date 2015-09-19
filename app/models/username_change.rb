@@ -1,6 +1,4 @@
 class UsernameChange < ActiveRecord::Base
-  acts_as_votable
-
   def self.and_then(name)
     find_by(old_name: name)
   end
@@ -13,34 +11,16 @@ class UsernameChange < ActiveRecord::Base
 
   def self.change_for(old_name)
     change = find_by(old_name: old_name)
-    newNames = [change.new_name]
-    oldName = change.old_name
-    nextChange = ""
-    change_id = change.id
-    likes = change.votes_for.size
-    until nextChange.nil?
-      nextChange = and_then(change.new_name)
-      unless nextChange.nil?
-        newNames << nextChange.new_name
-        change = nextChange
-        break if nextChange.new_name == oldName
-      end
+    new_names, old_name = [change.new_name], change.old_name
+    next_change = ''
+    until next_change.nil?
+      next_change = and_then(change.new_name)
+      break if next_change.nil?
+      new_names << next_change.new_name
+      change = next_change
+      break if next_change.new_name == old_name
     end
-    return {id: change_id, old_name: oldName, new_names: newNames, likes: likes}
-  end
-
-  def self.test
-    change = find_by(old_name: "Paulina_z")
-    newNames = [change.new_name]
-    oldName = change.old_name
-    nextChange = ""
-    until nextChange.nil?
-      nextChange = and_then(change.new_name)
-      unless nextChange.nil?
-        newNames << nextChange.new_name
-        change = nextChange
-      end
-    end
-    return {old_name: oldName, new_names: newNames}
+    match = Match.where(name: change.new_name).first
+    { old_name: old_name, new_names: new_names, match: match }
   end
 end
