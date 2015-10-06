@@ -17,7 +17,7 @@ var NameChangeCount = React.createClass({
   render: function (){
     return (
       <span class='NameChangeCount'>
-        {this.state.totalChanges}
+        {this.state.totalChanges} total changes found to date.
       </span>
     );
   }
