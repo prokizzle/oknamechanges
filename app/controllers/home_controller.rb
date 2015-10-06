@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
   def index
     @first_change = UsernameChange.random
+    @total_changes = UsernameChange.all.size
   end
 
   def import
