@@ -1,55 +1,55 @@
-PreCommit:
-  BundleCheck:
-    enabled: true
-    on_warn: fail
-  RuboCop:
-   enabled: true
-   on_warn: fail
-   exclude:
-    - '/db/schema.rb'
-  Brakeman:
-    enabled: true
-    on_warn: fail
-  CssLint:
-    enabled: true
-    on_warn: fail
-  HtmlHint:
-    enabled: true
-    on_warn: fail
-  HtmlTidy:
-    enabled: true
-    on_warn: fail
-  JsHint:
-    enabled: true
-    on_warn: fail
-  JsxHint:
-    enabled: true
-    on_warn: fail
-  MergeConflicts:
-    enabled: true
-    on_warn: fail
-  ScssLint:
-    enabled: false
-    on_warn: fail
-  SemiStandard:
-    enabled: true
-    on_warn: fail
-  Standard:
-    enabled: true
-    on_warn: fail
-  YamlSyntax:
-    enabled: true
+# PreCommit:
+#   BundleCheck:
+#     enabled: true
+#     on_warn: fail
+#   RuboCop:
+#    enabled: true
+#    on_warn: fail
+#    exclude:
+#     - '/db/schema.rb'
+#   Brakeman:
+#     enabled: true
+#     on_warn: fail
+#   CssLint:
+#     enabled: true
+#     on_warn: fail
+#   HtmlHint:
+#     enabled: true
+#     on_warn: fail
+#   HtmlTidy:
+#     enabled: true
+#     on_warn: fail
+#   JsHint:
+#     enabled: true
+#     on_warn: fail
+#   JsxHint:
+#     enabled: true
+#     on_warn: fail
+#   MergeConflicts:
+#     enabled: true
+#     on_warn: fail
+#   ScssLint:
+#     enabled: false
+#     on_warn: fail
+#   SemiStandard:
+#     enabled: true
+#     on_warn: fail
+#   Standard:
+#     enabled: true
+#     on_warn: fail
+#   YamlSyntax:
+#     enabled: true
 
-PostCommit:
-  IndexTags:
-    enabled: true
- # TrailingWhitespace:
- #   exclude:
- #     - '**/db/structure.sql' # Ignore trailing whitespace in generated files
+# PostCommit:
+#   IndexTags:
+#     enabled: true
+#  # TrailingWhitespace:
+#  #   exclude:
+#  #     - '**/db/structure.sql' # Ignore trailing whitespace in generated files
 
-PostCheckout:
- # ALL: # Special hook name that customizes all hooks of this type
- #   quiet: true # Change all post-checkout hooks to only display output on failure
+# PostCheckout:
+#  # ALL: # Special hook name that customizes all hooks of this type
+#  #   quiet: true # Change all post-checkout hooks to only display output on failure
 
- IndexTags:
-   enabled: true # Generate a tags file with `ctags` each time HEAD changes
+#  IndexTags:
+#    enabled: true # Generate a tags file with `ctags` each time HEAD changes

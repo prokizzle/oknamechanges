@@ -3,14 +3,14 @@ require 'sidekiq-runner'
 
 Sidekiq.configure_server do |config|
   Encoding.default_external = Encoding::UTF_8
-  config.redis = { url: ENV['redis_url'],
+  config.redis = { url: ENV['REDIS_URL'],
                    namespace: 'lazycupid'
                    }
 end
 
 Sidekiq.configure_client do |config|
   Encoding.default_external = Encoding::UTF_8
-  config.redis = { url: ENV['redis_url'],
+  config.redis = { url: ENV['REDIS_URL'],
                    namespace: 'lazycupid' }
 end
 
