@@ -8,6 +8,7 @@ gem 'pg'
 gem 'figaro'
 gem 'health_check'
 gem 'net-ping'
+gem 'turnout'
 
 # assets
 gem 'node'
