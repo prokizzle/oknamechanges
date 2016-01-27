@@ -1,6 +1,6 @@
 # README
 
-OKNameChanges was a bot that scanned profiles on OKCupid, and periodically returned to them to see if the usernames had changed. This is pretty easy to accomplish, since OKCupid aliases all of their old username URLs to the new username profiles. So if you were to go to `http://okcupid.com/profiles/old_user_name`, the link would resolve, but the username on the profile page would show their username. So by checking to see if these two are different, I can easily detect a username change,
+OKNameChanges was a bot that scanned profiles on OKCupid, and periodically returned to them to see if the usernames had changed. This is pretty easy to accomplish, since OKCupid aliases all of their old username URLs to the new username profiles. So if you were to go to `http://okcupid.com/profiles/old_user_name`, the link would resolve, but the username on the profile page would show their new username. So by checking to see if these two are different, I can easily detect a username change,
 and quickly log it. Warning, this can take up quite a bit of database space. Expect to start seeing some results after a week.
 
 In its current state, I expect this app to be broken. It takes a lot of maintenance to work, since OKCupid tends to release new features or changes roughly every Friday. They're very quickly transitioning the entire site to React, while simultaneously A/B testing new features. Keeping up with the OKCupid team is a nightmare, which is why I abandoned this project. On the other hand, it's insanely amusing to see a feed of username changes. 
